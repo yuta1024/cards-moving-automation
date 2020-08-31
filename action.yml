@@ -1,0 +1,22 @@
+name: Cards Moving Automation
+description: Automate that cards of GitHub Project move to any column with expiration
+inputs:
+  repo_token:
+    description: The token for the repository can be passed in using {{ secrets.GITHUB_TOKEN }}
+    required: true
+  project:
+    description: The name of the GitHub Project
+    required: true
+  from_column:
+    description: The name of the columns which contains cards to move
+    required: true
+  to_column:
+    description: The name of the column to move it into
+    required: true
+  expiration_days:
+    description: The minimum days of moving cards with no activity
+    default: '90'
+    required: false
+runs:
+  using: node12
+  main: dist/index.js
