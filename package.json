@@ -1,0 +1,40 @@
+{
+  "name": "cards-moving-automation",
+  "version": "1.0.0",
+  "description": "Automate that cards of GitHub Project move to any column with expiration",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -m",
+    "lint": "eslint .",
+    "test": "jest --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yuta1024/cards-moving-automation.git"
+  },
+  "keywords": [
+    "projects",
+    "automation"
+  ],
+  "author": "Yuta Harima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuta1024/cards-moving-automation/issues"
+  },
+  "homepage": "https://github.com/yuta1024/cards-moving-automation#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0",
+    "moment-timezone": "^0.5.31"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.23.0",
+    "eslint": "^7.7.0",
+    "jest": "^26.4.2"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "tests/lib/fixtures"
+    ]
+  }
+}
