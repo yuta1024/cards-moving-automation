@@ -1,5 +1,6 @@
 # cards-moving-automation
 ![Test](https://github.com/yuta1024/cards-moving-automation/workflows/Test/badge.svg)
+[![codecov](https://codecov.io/gh/yuta1024/cards-moving-automation/branch/main/graph/badge.svg)](https://codecov.io/gh/yuta1024/cards-moving-automation)
 
 Automate that cards of GitHub Project move to any column with expiration.
 
