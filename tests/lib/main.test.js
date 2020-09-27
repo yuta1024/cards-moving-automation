@@ -57,6 +57,24 @@ describe('./lib/main', () => {
       return expect(main()).rejects.toThrow('col-404 is not found in project-1');
     });
 
+    it('should output the log if there are no cards to move', () => {
+      mock.validator.getArgs.mockResolvedValue({
+        oken: 'test-token',
+        project: 'project-1',
+        toColumn: 'col-1',
+        fromColumn: 'col-2',
+        expirationDays: 365
+      });
+      mock.project.getAllProjects.mockResolvedValue(projectFixture.first().repository.projects.nodes);
+      mock.project.getAllColumns.mockResolvedValue(columnFixture.first().repository.project.columns.nodes);
+      mock.project.getAllOpenedIssues.mockResolvedValue(issueFixture.verbose().repository.issues.nodes);
+
+      return main().then(() => {
+        expect(mock.core.info.mock.calls[0][0]).toBe('There are no cards to move.');
+        expect(mock.project.moveCard).toBeCalledTimes(0);
+      });
+    });
+
     it('should be error if something happens during moving cards', () => {
       mock.validator.getArgs.mockResolvedValue({
         token: 'test-token',
