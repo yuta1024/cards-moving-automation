@@ -28,7 +28,7 @@
     "moment-timezone": "^0.5.31"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.24.1",
+    "@vercel/ncc": "^0.25.0",
     "eslint": "^7.12.1",
     "jest": "^26.6.3"
   },
